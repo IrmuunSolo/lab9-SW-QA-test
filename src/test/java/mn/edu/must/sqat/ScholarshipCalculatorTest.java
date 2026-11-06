@@ -156,4 +156,22 @@ class ScholarshipCalculatorTest {
                 calculator.scholarship(2.5, 12, false)
         );
     }
+
+    @Test
+    void gpaReturns4ForSingleScore() {
+        assertEquals(
+                4.0,
+                calculator.gpa(new double[]{95}),
+                0.000001
+        );
+    }
+
+    @Test
+    void gpaReturns2Point5ForMultipleScores() {
+        assertEquals(
+                2.5,
+                calculator.gpa(new double[]{95, 85, 75, 65}),
+                0.000001
+        );
+    }
 }
