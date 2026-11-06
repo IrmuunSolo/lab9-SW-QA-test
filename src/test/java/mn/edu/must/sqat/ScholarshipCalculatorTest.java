@@ -174,4 +174,39 @@ class ScholarshipCalculatorTest {
                 0.000001
         );
     }
+
+    @Test
+    void letterGradeReturnsDFor60() {
+        assertEquals("D", calculator.letterGrade(60));
+    }
+
+    @Test
+    void letterGradeReturnsFFor59Point99() {
+        assertEquals("F", calculator.letterGrade(59.99));
+    }
+
+    @Test
+    void letterGradeReturnsDFor69Point99() {
+        assertEquals("D", calculator.letterGrade(69.99));
+    }
+
+    @Test
+    void letterGradeReturnsFFor0() {
+        assertEquals("F", calculator.letterGrade(0));
+    }
+
+    @Test
+    void letterGradeReturnsAFor100() {
+        assertEquals("A", calculator.letterGrade(100));
+    }
+
+    @Test
+    void letterGradeReturnsBFor89Point99() {
+        assertEquals("B", calculator.letterGrade(89.99));
+    }
+
+    @Test
+    void letterGradeReturnsAFor90() {
+        assertEquals("A", calculator.letterGrade(90));
+    }
 }
