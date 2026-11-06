@@ -1,4 +1,5 @@
 # Лаборатори №9 — Код хамралт ба JaCoCo
+[![Java CI](https://github.com/IrmuunSolo/lab9-SW-QA-test/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/IrmuunSolo/lab9-SW-QA-test/actions/workflows/test.yml)
 
 - Хичээл: F.CSA313 — Программ хангамжийн чанарын баталгаа ба тест
 - Оюутан: Л. Ирмүүн
@@ -184,6 +185,27 @@ Branch хамралт 100% байсан ч яг 60 оноог шалгасан �
 - [Засварын өмнөх унасан тест](results/mvn-test-D-fail.txt)
 - [Засварын дараах Maven-ийн гаралт](results/mvn-verify-final.txt)
 - [Эцсийн JaCoCo хэмжилт](results/jacoco-final.csv)
+
+## Нэмэлт даалгавар — Сонголт 1: Coverage gate ба CI
+
+`pom.xml`-д JaCoCo-ийн `check` goal-ийг `verify` үе шатанд
+нэмж, төслийн нийт Branch хамралтын доод босгыг 90% болгосон.
+Branch хамралт 90%-иас доош бол build унана.
+
+`.github/workflows/test.yml` нь push болон pull request бүрд
+Ubuntu орчинд Java 21 ашиглан дараах командыг ажиллуулна:
+
+```bash
+mvn --batch-mode --no-transfer-progress clean verify
+```
+
+GitHub Actions дээр 29 тест бүгд амжилттай давж,
+`All coverage checks have been met.` болон `BUILD SUCCESS`
+гаралт бүртгэгдсэн. README-ийн эхэнд CI-ийн төлөвийг
+харуулах badge нэмсэн.
+
+Лабораторийн эцсийн Line болон Branch хамралтын
+100%-ийн шаардлага хэвээр байна.
 
 ## AI туслах ашигласан байдал
 
